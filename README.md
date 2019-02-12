@@ -20,6 +20,8 @@ npm install -g npm@latest
 npm cache clean -f
 npm install -g n
 n stable
+
+npm install -g @angular/cli
 ```
 Vérifier les versions avec `node -v` et `npm -v`
 
@@ -38,3 +40,18 @@ Dans le fichier package.json, la ligne
 modifie la commande `npm start` pour lancer le projet avec une session cloud9.
 
 La preview est accessible à https://angular-arkaion.c9users.io/
+
+## Commandes
+### Git
+```
+git pull origin *branch* => fait un fetch et un merge de la *branch* sur la branche courante
+git merge *branch* => merge la *branch* avec la branche courante
+git add .
+git commit -m "message"
+git push origin *branch*=> puch la branche courante sur la *branch*
+```
+### Angular CLI
+```
+ng new mon-nom-de-projet-angular --style=scss --skip-tests=true  => Créer un nouveau projet angular
+ng generate component mon-nom-de-component  => Créer un nouveau component
+```
