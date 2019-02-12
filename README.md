@@ -44,11 +44,11 @@ La preview est accessible à https://angular-arkaion.c9users.io/
 ## Commandes
 ### Git
 ```
-git pull origin *branch* => fait un fetch et un merge de la *branch* sur la branche courante
-git merge *branch* => merge la *branch* avec la branche courante
+git pull origin branch => fait un fetch et un merge de la branch sur la branche courante
+git merge branch => merge la branch avec la branche courante
 git add .
 git commit -m "message"
-git push origin *branch*=> puch la branche courante sur la *branch*
+git push origin branch=> puch la branche courante sur la branch
 ```
 ### Angular CLI
 ```
