@@ -1,42 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/interval';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  isAuth = false;
-  
-appareils = [
-    {
-      name: 'Machine à laver',
-      status: 'éteint'
-    },
-    {
-      name: 'Frigo',
-      status: 'allumé'
-    },
-    {
-      name: 'Ordinateur',
-      status: 'éteint'
-    }
-  ];
-  
-  
-  
-  constructor(){
-    setTimeout(
+export class AppComponent implements OnInit, OnDestroy {
+
+  secondes: number;
+  counterSubscription: Subscription;
+
+  ngOnInit() {
+    const counter = Observable.interval(1000);
+    this.counterSubscription = counter.subscribe(
+      (value) => {
+        this.secondes = value;
+      },
+      (error) => {
+        console.log('Uh-oh, an error occurred! : ' + error);
+      },
       () => {
-        this.isAuth = true;
-      }, 4000
+        console.log('Observable complete!');
+      }
     );
   }
-  
-  onAllumer(){
-    console.log('On allume tout !');
+
+  ngOnDestroy() {
+    this.counterSubscription.unsubscribe();
   }
-  
-  
-  
 }

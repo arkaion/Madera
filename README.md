@@ -32,7 +32,13 @@ nbm use #.#.#
 nvm alias default node
 ```
 
-## Lancement
+Une fois npm et node à jour, lancer la commande `git clone https://github.com/arkaion/Madera.git`
+
+Se déplacer dans le dossier créé, puis lancer `npm install`
+
+Une fois les dépendances téléchargées, lancer le projet avec `ng serve`
+
+## Lancement sur serveur distant (IDE en ligne)
 Dans le fichier package.json, la ligne
 
 `"start": "ng serve --host $IP --port $PORT --public-host $C9_HOSTNAME",`
